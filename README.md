@@ -1,4 +1,8 @@
-# React + Vite
+# Projet Kasa REACT
+
+Projet OpenclassRooms dev web numéro 5
+
+React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
