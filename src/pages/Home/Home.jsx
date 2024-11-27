@@ -8,7 +8,12 @@ function App() {
     <div>
       <Navbar />
       <Banner />
-      <LocationCards />
+      <div className="cards-container">
+        <LocationCards />
+        <LocationCards />
+        <LocationCards />
+        <LocationCards />
+      </div>
     </div>
   );
 }
