@@ -1,3 +1,5 @@
+@use "../../SCSS/variable.scss" as *;
+
 .banner-container {
   position: relative;
   max-width: 100vw;
@@ -6,7 +8,7 @@
     background: url(/src/assets/images/BackgroundBanner1.jpg) no-repeat center; // check css
   }
   &-about {
-    background: url(/src/assets/images/BackgroundBanner1.jpg) no-repeat center; // backgroun about
+    background: url(/src/assets/images/BackgroundBanner2.jpg) no-repeat center;
   }
   display: flex;
   // width: 1240px;
@@ -27,7 +29,7 @@
       font-size: 48px;
       font-weight: 500;
       line-height: 68.45px;
-      color: white;
+      color: $color-white;
     }
   }
 }

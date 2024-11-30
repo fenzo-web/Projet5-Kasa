@@ -1,15 +1,15 @@
+@use "../../SCSS/variable.scss" as *;
+
 .footer {
-  background-color: black;
-  color: white;
+  background-color: $color-black;
+  color: $color-white;
   min-height: 200px;
   display: grid;
   place-items: center;
-}
-
-.footer__logo {
-  padding-top: 60px;
-}
-
-.footer__text {
-  padding-bottom: 30;
+  .footer__logo {
+    padding-top: 60px;
+  }
+  .footer__text {
+    padding-bottom: 30;
+  }
 }

@@ -1,5 +1,7 @@
+@use "../../SCSS/variable.scss" as *;
+
 .Location__Cards {
-  background-image: linear-gradient(to top, #610000, #ff6060);
+  background-image: linear-gradient(to top, $color-secondary, $color-primary);
   width: 340px;
   height: 340px;
   border-radius: 10px;
@@ -16,7 +18,7 @@
   flex-wrap: wrap;
   padding: 50px;
   margin-inline: 100px;
-  background-color: #f6f6f6;
+  background-color: $background-main;
   min-height: 50vh;
   justify-content: space-between;
   border-radius: 25px;
@@ -27,7 +29,7 @@
   font-size: 18px;
   width: 50%;
   margin-left: 20px;
-  color: white;
+  color: $color-white;
 }
 
 @media screen and (width <= 768px) {
@@ -37,7 +39,7 @@
 
   .cards-container {
     justify-content: center;
-    background-color: white;
+    background-color: $color-white;
     gap: 20px;
     margin-inline: 0px;
   }
