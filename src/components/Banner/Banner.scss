@@ -2,7 +2,12 @@
   position: relative;
   max-width: 100vw;
   padding-inline: 2rem;
-  background: url(/src/assets/images/BackgroundBanner1.jpg);
+  &-home {
+    background: url(/src/assets/images/BackgroundBanner1.jpg) no-repeat center; // check css
+  }
+  &-about {
+    background: url(/src/assets/images/BackgroundBanner1.jpg) no-repeat center; // backgroun about
+  }
   display: flex;
   // width: 1240px;
   height: 223px;

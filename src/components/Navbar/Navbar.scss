@@ -8,6 +8,14 @@
   margin-inline: 100px;
 }
 
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+.navbar a:hover {
+  text-decoration: underline;
+}
+
 .navbar__logo {
   margin-right: auto;
 }

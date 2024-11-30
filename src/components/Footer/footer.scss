@@ -1,0 +1,15 @@
+.footer {
+  background-color: black;
+  color: white;
+  min-height: 200px;
+  display: grid;
+  place-items: center;
+}
+
+.footer__logo {
+  padding-top: 60px;
+}
+
+.footer__text {
+  padding-bottom: 30;
+}
