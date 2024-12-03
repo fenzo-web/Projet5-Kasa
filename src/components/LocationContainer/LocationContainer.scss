@@ -1,0 +1,25 @@
+@use "../../SCSS/variable.scss" as *;
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 50px;
+  margin-inline: 100px;
+  background-color: $background-main;
+  min-height: 50vh;
+  justify-content: space-between;
+  border-radius: 25px;
+  margin-bottom: 50px;
+}
+
+@media screen and (width <= 768px) {
+  .cards-container {
+    justify-content: center;
+    background-color: $color-white;
+    gap: 20px;
+    margin-inline: 0px;
+  }
+}

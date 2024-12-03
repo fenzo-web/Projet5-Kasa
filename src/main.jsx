@@ -11,7 +11,9 @@ import Footer from "./components/Footer/Footer.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
