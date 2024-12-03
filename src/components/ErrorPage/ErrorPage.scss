@@ -1,0 +1,20 @@
+@use "../../SCSS/variable.scss" as *;
+
+.main__error__page {
+  text-align: center;
+  margin-bottom: 300px;
+  .error__page {
+    color: $color-primary;
+    h1 {
+      font-size: 288px;
+    }
+    h2 {
+      font-size: 36px;
+    }
+  }
+
+  .link {
+    font-size: 18px;
+    color: $color-black;
+  }
+}

@@ -6,7 +6,7 @@ function LocationCards({ title, image }) {
   return (
     <article className="Location__Cards">
       <NavLink to="logement">
-        <img src={image} alt="" />
+        <img src={image} alt="image" />
         <p className="Location__Cards__Title">{title}</p>
       </NavLink>
     </article>
