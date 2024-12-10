@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from "react";
 import "./LocationContainer.scss";
 import LocationCards from "./../LocationCards/LocationCards";
+import { fetchLocation } from "../../utils/fetchdata.js";
+const locations = await fetchLocation();
 
 export default function LocationContainer() {
-  const [location, setLocation] = useState([]);
-
-  useEffect(fetchLocation, []);
-  function fetchLocation() {
-    fetch("location.json")
-      .then((res) => res.json())
-      .then((res) => setLocation(res))
-      .catch(console.error);
-  }
   return (
     <div className="cards-container">
-      {location.map((location) => (
-        <LocationCards title={location.title} image={location.cover} />
+      {locations.map((location) => (
+        <LocationCards
+          key={location.id}
+          title={location.title}
+          image={location.cover}
+          id={location.id}
+        />
       ))}
     </div>
   );

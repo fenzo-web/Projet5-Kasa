@@ -1,0 +1,6 @@
+@use "../../SCSS/variable.scss" as *;
+
+.location__description {
+  background-color: $color-primary;
+  color: $color-white;
+}
