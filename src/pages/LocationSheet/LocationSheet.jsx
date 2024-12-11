@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import LocationDescription from "../../components/LocationDescription/LocationDescription.jsx";
+import DescriptionPanel from "../../components/DescriptionPanel/DescriptionPanel.jsx";
 import { fetchLocation } from "../../utils/fetchdata.js";
 import "./LocationSheet.scss";
 
@@ -84,8 +84,8 @@ function LocationSheet() {
         </div>
       </div>
       <div className="location__description__area">
-        <LocationDescription />
-        <LocationDescription />
+        <DescriptionPanel />
+        <DescriptionPanel />
       </div>
     </div>
   );

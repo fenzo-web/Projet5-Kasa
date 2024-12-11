@@ -1,12 +1,12 @@
 import React from "react";
-import "./LocationDescription.scss";
+import "./DescriptionPanel.scss";
 
-export default function LocationDescription() {
+export default function DescriptionPanel() {
   return (
     <div className="location__description">
       <p className="description__title">
         <span>Description</span>
-        <i class="fa-solid fa-chevron-down"></i>
+        <i className="fa-solid fa-chevron-down"></i>
       </p>
       <p className="description__content">
         Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer
