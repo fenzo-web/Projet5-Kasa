@@ -1,6 +1,27 @@
 @use "../../SCSS/variable.scss" as *;
 
 .location__description {
-  background-color: $color-primary;
-  color: $color-white;
+  width: 50%;
+  p {
+    margin-block: 0;
+  }
+  .description__title {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 10px 20px 10px 10px;
+    gap: 0px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    i {
+      font-size: 32px;
+      cursor: pointer;
+    }
+  }
+  .description__content {
+    background-color: $background-main;
+    border-radius: 10px;
+    padding: 20px;
+  }
 }

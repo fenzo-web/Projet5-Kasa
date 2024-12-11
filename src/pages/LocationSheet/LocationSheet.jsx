@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import LocationDescription from "../../components/LocationDescription/LocationDescription.jsx";
 import { fetchLocation } from "../../utils/fetchdata.js";
+import "./LocationSheet.scss";
 
 function LocationSheet() {
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -46,34 +47,46 @@ function LocationSheet() {
 
   return (
     <div className="location__page">
-      <div>
+      <div className="location__image">
         <img src={selectedLocation.cover} alt={selectedLocation.title} />
       </div>
       <div className="location__title">
         <h1>{selectedLocation.title}</h1>
         <p>{selectedLocation.location}</p>
-        <h2>{selectedLocation.tags.join(" ")}</h2>
-      </div>
-      <div>
-        <div className="location__host">
-          <h3>Host: {selectedLocation.host.name}</h3>{" "}
-          {/* Affichage du nom de l'host */}
-          <div className="location__host__image">
-            {/* affichage de l'image de l'host */}
-            <img
-              src={selectedLocation.host.picture}
-              alt={selectedLocation.host.name}
-            />
-          </div>
-          {/* Affichage des étoiles */}
-          <span>★</span>
-          <span>★</span>
-          <span>★</span>
-          <span>★</span>
-          <span>★</span>
+        <div className="location__tags">
+          {selectedLocation.tags.map((tag) => (
+            <span>{tag}</span>
+          ))}
         </div>
       </div>
-      <LocationDescription />
+      <div className="location__header">
+        <div className="location__host">
+          <div className="location__host__details">
+            <h3>{selectedLocation.host.name}</h3>{" "}
+            {/* Affichage du nom de l'host */}
+            <div className="location__host__image">
+              {/* affichage de l'image de l'host */}
+              <img
+                src={selectedLocation.host.picture}
+                alt={selectedLocation.host.name}
+              />
+            </div>
+          </div>
+
+          {/* Affichage des étoiles */}
+          <div className="location__stars">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+        </div>
+      </div>
+      <div className="location__description__area">
+        <LocationDescription />
+        <LocationDescription />
+      </div>
     </div>
   );
 }
