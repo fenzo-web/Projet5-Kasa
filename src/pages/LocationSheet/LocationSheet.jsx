@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import DescriptionPanel from "../../components/DescriptionPanel/DescriptionPanel.jsx";
 import { fetchLocation } from "../../utils/fetchdata.js";
+import Carousel from "../../components/Carousel/Carousel.jsx";
 import "./LocationSheet.scss";
 
 function LocationSheet() {
   const [selectedLocation, setSelectedLocation] = useState(null);
   const { id } = useParams(); // Utilisation de useParams pour récupérer l'ID depuis l'URL
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchLocationData = async () => {
@@ -18,6 +20,7 @@ function LocationSheet() {
 
         if (!locations || locations.length === 0) {
           console.error("Aucune location trouvée !");
+          navigate("/error");
           return; // Aucune location trouvée, arrête le processus ici
         }
 
@@ -28,6 +31,7 @@ function LocationSheet() {
 
         if (!location) {
           console.error("Location introuvable avec l'ID", id);
+          navigate("/error");
           return;
         }
 
@@ -35,6 +39,7 @@ function LocationSheet() {
         setSelectedLocation(location); // Mise à jour de l'état avec la location trouvée
       } catch (error) {
         console.error("Erreur lors de la récupération des données :", error);
+        navigate("/error");
       }
     };
 
@@ -47,15 +52,15 @@ function LocationSheet() {
 
   return (
     <div className="location__page">
-      <div className="location__image">
-        <img src={selectedLocation.cover} alt={selectedLocation.title} />
+      <div className="location__carousel">
+        <Carousel images={selectedLocation.pictures} />
       </div>
       <div className="location__title">
         <h1>{selectedLocation.title}</h1>
         <p>{selectedLocation.location}</p>
         <div className="location__tags">
           {selectedLocation.tags.map((tag) => (
-            <span>{tag}</span>
+            <span key={tag}>{tag}</span>
           ))}
         </div>
       </div>
@@ -75,17 +80,28 @@ function LocationSheet() {
 
           {/* Affichage des étoiles */}
           <div className="location__stars">
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
+            {[1, 2, 3, 4, 5].map((num) => (
+              <span
+                key={num}
+                className={selectedLocation.rating >= num ? "on" : ""}
+              >
+                ★
+              </span>
+            ))}
           </div>
         </div>
       </div>
       <div className="location__description__area">
-        <DescriptionPanel />
-        <DescriptionPanel />
+        <DescriptionPanel
+          title="Description"
+          content={selectedLocation.description}
+        />
+        <DescriptionPanel
+          title="Equipement"
+          content={selectedLocation.equipments.map((equipment) => (
+            <li key={equipment}>{equipment}</li>
+          ))}
+        />
       </div>
     </div>
   );

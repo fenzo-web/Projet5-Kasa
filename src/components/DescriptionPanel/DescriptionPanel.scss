@@ -18,11 +18,31 @@
     i {
       font-size: 32px;
       cursor: pointer;
+      &.open {
+        transform: rotate(180deg);
+      }
     }
   }
   .description__content {
     background-color: $background-main;
     border-radius: 10px;
-    padding: 20px;
+    color: $color-black;
+    padding: 0 20px;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out,
+      opacity 0.3s ease-out;
+    max-height: 0; /* Cela permet d'ajouter une animation lors de l'ouverture/fermeture */
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+
+    &.open {
+      max-height: 500px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: block;
+      opacity: 1;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out,
+        opacity 0.3s ease-in;
+    }
   }
 }

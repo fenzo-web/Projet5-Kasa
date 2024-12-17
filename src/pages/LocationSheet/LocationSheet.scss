@@ -5,10 +5,10 @@
   margin-inline: 100px;
   display: flex;
   flex-wrap: wrap;
-  .location__image {
+  .location__carousel {
     width: 100%;
     margin-bottom: 30px;
-    img {
+    .carousel-image {
       width: 100%;
       object-fit: cover;
       height: 415px;
@@ -28,6 +28,9 @@
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
     }
+    p {
+      color: $color-black;
+    }
     .location__tags {
       display: flex;
       gap: 10px;
@@ -39,7 +42,7 @@
         padding-inline: 30px;
         border-radius: 10px;
         height: 25px;
-        width: 115px;
+
         justify-content: center;
       }
     }
@@ -79,10 +82,17 @@
       gap: 4px;
       font-size: 32px;
       padding-top: 21px;
+      color: #e3e3e3;
+      .on {
+        color: $color-primary;
+      }
     }
   }
   .location__description__area {
     display: flex;
     gap: 70px;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 200px;
   }
 }

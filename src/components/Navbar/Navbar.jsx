@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <img src="logo.png" alt="Logo" width="210" />
+        <img src="/logo.png" alt="Logo" width="210" />
       </div>
       <NavLink to="/">
         <div>Accueil</div>

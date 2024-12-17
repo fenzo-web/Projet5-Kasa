@@ -4,12 +4,12 @@ import { NavLink } from "react-router";
 
 function LocationCards({ title, image, id }) {
   return (
-    <article className="Location__Cards">
-      <NavLink to={`logement/${id}`}>
+    <NavLink to={`logement/${id}`} className="Location__Link">
+      <article className="Location__Cards">
         <img src={image} alt="image" />
         <p className="Location__Cards__Title">{title}</p>
-      </NavLink>
-    </article>
+      </article>
+    </NavLink>
   );
 }
 
