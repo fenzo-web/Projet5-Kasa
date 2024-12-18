@@ -41,7 +41,26 @@
 }
 
 @media screen and (width <= 768px) {
+  .Location__Link {
+    width: 90%;
+    margin: 10px auto;
+  }
+
   .Location__Cards {
-    flex-basis: 100%;
+    img {
+      width: 100%;
+      min-height: 350px;
+      object-fit: cover;
+    }
+  }
+
+  .Location__Cards__Title {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1300px) {
+  .Location__Link {
+    width: 40%;
+    margin: 10px auto;
   }
 }

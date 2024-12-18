@@ -6,23 +6,25 @@
   .error__page {
     color: $color-primary;
     h1 {
-      font-size: 288px;
       margin-top: 0;
       font-family: Montserrat;
       font-size: 288px;
-      font-weight: 700;
-      line-height: 410.69px;
       text-align: center;
-      text-underline-position: from-font;
-      text-decoration-skip-ink: none;
     }
     h2 {
       font-size: 36px;
+      margin-bottom: 130px;
     }
   }
 
   .link {
     font-size: 18px;
     color: $color-black;
+  }
+}
+@media screen and (max-width: 768px) {
+  .error__text--break {
+    display: block;
+    margin-top: 5px;
   }
 }

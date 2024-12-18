@@ -3,15 +3,26 @@
 .footer {
   background-color: $color-black;
   color: $color-white;
-  min-height: 200px;
+  min-height: 250px;
   display: grid;
   place-items: center;
   width: 100%;
   margin-top: auto;
+
   .footer__logo {
     padding-top: 60px;
   }
+
   .footer__text {
     padding-bottom: 30px;
+    text-align: center;
+    white-space: nowrap;
+
+    @media screen and (max-width: 768px) {
+      .footer__text--break {
+        display: block;
+        margin-top: 5px;
+      }
+    }
   }
 }

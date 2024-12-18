@@ -67,7 +67,10 @@ function LocationSheet() {
       <div className="location__header">
         <div className="location__host">
           <div className="location__host__details">
-            <h3>{selectedLocation.host.name}</h3>{" "}
+            <h3>
+              {selectedLocation.host.name.split(" ")[0]} <br />
+              {selectedLocation.host.name.split(" ").slice(1).join(" ")}
+            </h3>
             {/* Affichage du nom de l'host */}
             <div className="location__host__image">
               {/* affichage de l'image de l'host */}
