@@ -17,4 +17,22 @@ const fetchLocation = async () => {
     return null; // Tu peux choisir de retourner `null` ou une valeur par défaut en cas d'erreur
   }
 };
-export { fetchLocation };
+
+const fetchLocationById = async (id) => {
+  try {
+    const locations = await fetchLocation();
+    // Ici, on compare les IDs comme des chaînes de caractères
+    const location = locations.find(
+      (location) => location.id === id // Comparaison en tant que chaîne
+    );
+    if (location) {
+      return location;
+    } else {
+      throw new Error("L'appartement n'est pas trouvé ");
+    }
+  } catch (error) {
+    return error;
+  }
+};
+
+export { fetchLocation, fetchLocationById };

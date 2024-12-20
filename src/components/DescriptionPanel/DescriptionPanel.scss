@@ -19,7 +19,7 @@
       font-size: 32px;
       cursor: pointer;
       &.open {
-        transform: rotate(180deg);
+        transform: rotate(180deg); /* Pivote les chevrons quand ouvert */
       }
     }
   }
@@ -30,18 +30,17 @@
     padding: 0 20px;
     transition: max-height 0.3s ease-out, padding 0.3s ease-out,
       opacity 0.3s ease-out;
-    max-height: 0; /* Cela permet d'ajouter une animation lors de l'ouverture/fermeture */
+    max-height: 0; /* L'élément est caché par défaut */
     overflow: hidden;
-    display: none;
+    display: block; /* Toujours afficher le conteneur (le problème de display: none est que la transition n'est pas possible) */
     opacity: 0;
 
     &.open {
-      max-height: 500px;
+      max-height: 1000px; /* Une valeur suffisamment grande pour contenir tout le contenu */
       padding-top: 20px;
       padding-bottom: 20px;
-      display: block;
       opacity: 1;
-      transition: max-height 0.3s ease-out, padding 0.3s ease-out,
+      transition: max-height 0.3s ease-in, padding 0.3s ease-in,
         opacity 0.3s ease-in;
     }
   }

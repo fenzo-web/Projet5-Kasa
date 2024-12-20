@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import DescriptionPanel from "../../components/DescriptionPanel/DescriptionPanel.jsx";
-import { fetchLocation } from "../../utils/fetchdata.js";
+import { fetchLocationById } from "../../utils/fetchdata.js";
 import Carousel from "../../components/Carousel/Carousel.jsx";
 import "./LocationSheet.scss";
 
@@ -15,28 +15,16 @@ function LocationSheet() {
       try {
         console.log("Fetching location data...");
 
-        const locations = await fetchLocation(); // Appel de la fonction fetchLocation
-        console.log("Fetched locations:", locations);
+        const location = await fetchLocationById(id); // Appel de la fonction fetchLocation
+        console.log("Fetched location:", location);
 
-        if (!locations || locations.length === 0) {
+        if (!location?.id) {
           console.error("Aucune location trouvée !");
-          navigate("/error");
-          return; // Aucune location trouvée, arrête le processus ici
+          throw new Error();
+        } else {
+          console.log("Selected location:", location);
+          setSelectedLocation(location); // Mise à jour de l'état avec la location trouvée
         }
-
-        // Ici, on compare les IDs comme des chaînes de caractères
-        const location = locations.find(
-          (location) => location.id === id // Comparaison en tant que chaîne
-        );
-
-        if (!location) {
-          console.error("Location introuvable avec l'ID", id);
-          navigate("/error");
-          return;
-        }
-
-        console.log("Selected location:", location);
-        setSelectedLocation(location); // Mise à jour de l'état avec la location trouvée
       } catch (error) {
         console.error("Erreur lors de la récupération des données :", error);
         navigate("/error");
@@ -53,7 +41,16 @@ function LocationSheet() {
   return (
     <div className="location__page">
       <div className="location__carousel">
-        <Carousel images={selectedLocation.pictures} />
+        {/* Condition pour afficher soit le carousel, soit une image */}
+        {selectedLocation.pictures.length > 1 ? (
+          <Carousel images={selectedLocation.pictures} />
+        ) : (
+          <img
+            src={selectedLocation.pictures[0]}
+            alt="Location"
+            className="carousel-image"
+          />
+        )}
       </div>
       <div className="location__title">
         <h1>{selectedLocation.title}</h1>
