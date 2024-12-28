@@ -45,3 +45,22 @@
     }
   }
 }
+/* Media Query pour les écrans de moins de 770px */
+@media (max-width: 770px) {
+  .banner-container {
+    margin-inline: 30px;
+    padding-inline: 1rem;
+  }
+}
+
+/* Media Query pour les écrans de moins de 550px */
+@media (max-width: 550px) {
+  .banner-container {
+    .banner-text-container {
+      .banner-text {
+        font-size: 28px;
+        line-height: 40px;
+      }
+    }
+  }
+}

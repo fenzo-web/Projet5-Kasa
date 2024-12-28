@@ -7,6 +7,10 @@
   font-weight: 500;
   font-size: 24px;
   margin-inline: 100px;
+  justify-content: space-between;
+  &__logo {
+    margin-right: auto;
+  }
   & a {
     text-decoration: none;
     color: $color-black;
@@ -18,6 +22,17 @@
     }
   }
 }
-.navbar__logo {
-  margin-right: auto;
+
+@media (max-width: 570px) {
+  .navbar {
+    margin-inline: 10px;
+  }
+  .navbar__logo img {
+    width: 150px;
+  }
+}
+@media (max-width: 470px) {
+  .navbar {
+    font-size: 14px;
+  }
 }

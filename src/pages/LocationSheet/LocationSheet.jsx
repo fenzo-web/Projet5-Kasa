@@ -13,16 +13,12 @@ function LocationSheet() {
   useEffect(() => {
     const fetchLocationData = async () => {
       try {
-        console.log("Fetching location data...");
-
         const location = await fetchLocationById(id); // Appel de la fonction fetchLocation
-        console.log("Fetched location:", location);
 
         if (!location?.id) {
           console.error("Aucune location trouvée !");
           throw new Error();
         } else {
-          console.log("Selected location:", location);
           setSelectedLocation(location); // Mise à jour de l'état avec la location trouvée
         }
       } catch (error) {
