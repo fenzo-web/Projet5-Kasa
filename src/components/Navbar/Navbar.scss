@@ -14,6 +14,7 @@
   & a {
     text-decoration: none;
     color: $color-black;
+    white-space: nowrap;
     &.active {
       text-decoration: underline;
     }
@@ -26,6 +27,7 @@
 @media (max-width: 570px) {
   .navbar {
     margin-inline: 10px;
+    font-size: 20px;
   }
   .navbar__logo img {
     width: 150px;
